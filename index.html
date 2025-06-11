@@ -1,16 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>doces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            font-weight: 290;
+            color: #2C5E2A;
+            background-color: #FFF9E6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Container da saudação */
+        .greeting-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #2C5E2A;
+            background-color: #FFF9E6;
+            z-index: 1000;
+        }
+
+        /* Mensagens de saudação */
+        .greeting-message {
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            margin: 10px 0;
+            animation: fadeInUp 1s forwards;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Animações de entrada */
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Delays para as mensagens */
+        .greeting-message:nth-child(1) { animation-delay: 0.5s; }
+        .greeting-message:nth-child(2) { animation-delay: 1.5s; }
+        .greeting-message:nth-child(3) { animation-delay: 2.5s; }
+        .greeting-message:nth-child(4) { animation-delay: 3.5s; }
+        .greeting-message:nth-child(5) { animation-delay: 5.5s; }
+        .greeting-message:nth-child(6) { animation-delay: 6.5s; }
+
+        /* Conteúdo principal */
+        .content {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .content.show { opacity: 1; }
+
+        /* Galeria automática */
+        .gallery-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .gallery-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .gallery-slide {
+            width: 350px;
+            height: 200px;
+            margin: 0 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .gallery-slide:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Pausa a animação no hover */
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
 <body>
+    <!-- Mensagens iniciais -->
+    <div class="greeting-container" id="greeting">
+        <div class="greeting-message">Olá Bibina.</div>
+        <div class="greeting-message">Você pode estar se perguntando...</div>
+        <div class="greeting-message">O porque eu fiz isso</div>
+        <div class="greeting-message">Mas é até que um tanto simples</div>
+        <div class="greeting-message">Meu amor vem de todas as formas.</div>
+        <div class="greeting-message">Aproveite.</div>
+    </div>
 
-<button class="botao-central" aria-label="Botão principal">Clique aqui</button
-    
-    
+    <!-- Conteúdo principal -->
+    <div class="content" id="mainContent">
+        <section style="padding: 2rem;">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Uma Cartinha pra Você</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6;">
+               Querida bina, nada tira o prazer de sentar e escrever as mais lindas coisas para você e por no papel todo meu carinho pela doce pessoa que você é, então resolvi eternizar isso na interwebs :D
+            </p>
+        </section>
+
+        <section style="background-color: #acc2e5; padding: 2rem;">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Cada momento que eu olho nos seus olhos é mágico.</h2>
+            <div class="gallery-container">
+                <div class="gallery-track">
+                    <!-- Fotos principais -->
+                    <div class="gallery-slide">
+                        <img src="foto1.jpeg" alt="Nossos momentos 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto2.jpg" alt="Nossos momentos 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto3.jpg" alt="Nossos momentos 3">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto4.jpg" alt="Nossos momentos 4">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto5.jpg" alt="Nossos momentos 5">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto6.jpg" alt="Nossos momentos 6">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto7.jpg" alt="Nossos momentos 7">
+                    </div>
+                    <!-- Fotos duplicadas para efeito infinito -->
+                    <div class="gallery-slide">
+                        <img src="foto1.jpeg" alt="Nossos momentos 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto2.jpg" alt="Nossos momentos 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto3.jpg" alt="Nossos momentos 3">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto4.jpg" alt="Nossos momentos 4">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto5.jpg" alt="Nossos momentos 5">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto6.jpg" alt="Nossos momentos 6">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="foto7.jpg" alt="Nossos momentos 7">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: #d6afaf; padding: 2rem;">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Obrigado por sempre ouvir as maluquices que eu te mando</h2>
+            <p style="font-size: 1rem;"> Você me inspira, dia após dia, como uma musa para um artista. Eu posso não ser bom pintando, ou escrevendo cartas, ou poemas... mas você me faz querer tentar. E isso é o suficiente. Eu quero você todos os dias.</p>
+        </section>
+
+         <section style="background-color: #f7f591; padding: 2rem;">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Cada detalhe</h2>
+            
+        </section>
+
+
+
+
+
+
+
+
+
+        <section style="padding: 2rem; text-align: center;">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Com Amor, Sempre</h2>
+            <p style="font-size: 1rem;">Feito com carinho por alguém que te adora.</p>
+        </section>
+    </div>
+
+    <script>
+        // Transição das mensagens iniciais para o conteúdo
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const greeting = document.getElementById('greeting');
+                greeting.style.transition = 'opacity 1s ease';
+                greeting.style.opacity = '0';
+                
+                setTimeout(() => {
+                    greeting.remove();
+                    document.getElementById('mainContent').classList.add('show');
+                }, 1000);
+            }, 10000);
+        });
+    </script>
 </body>
 </html>
