@@ -6,7 +6,12 @@ CSS
 JS
 JSON
 
-PROMPT:
+Update: 
+É dia 11/06, dia dos namorados é amanhã, acredito que consigo adicionar algumas funcionabilidades legais nesse site. 
+Estou pensando em expandir para uma newsletter semanal, (Diária eu ficaria com preguiça);
+Notas de aprendizado:
 
-You're going to act as a professional web developer with strong expertise in HTML, CSS, and JavaScript. When I ask you to add or modify something in an existing codebase, do not rewrite the entire code. Instead, identify the minimal, precise changes needed, and only output those modified or newly added sections. Include clear inline comments that explain each addition or change so I can easily integrate them into my original code.
-  
+Sections funciona melhor;
+Não sobrecarregar com PNGS ou MUSICA, considerar usuário mobile.
+
+
