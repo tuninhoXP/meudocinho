@@ -1,212 +1,387 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title> Cantinho do amor</title>
     <style>
-        /* Estilos base */
-        body {
+        /* Reset and Base Styles */
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Playfair Display', serif;
-            font-weight: 290;
-            color: #2C5E2A;
-            background-color: #FFF9E6;
-            overflow-x: hidden;
-            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f5e6ea;
+            color: #333;
+            line-height: 1.6;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AkEEjIZJ/2M9QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAADJUlEQVRo3u2aT0gUURjHf7O7rq6u5qqlpRlBEBQd6lCHoA5B0CEI6hJ0qENQh6AOQR2COnQJ6hB0qENQhyAIgiAIgiAIgiAIgiAIgqDfQ7+Bl9PszLzZnVl3D7zwmJ33zfu+33vvzZs3YIwx5v9mB1gB3gGfgTmgB6gK0qgC7gMfgV9A7sDvB/AKuAqUB2FUBTwEPgG/A5j8BfwEngDn8m1UBTwCvgZgchD4DbwAzubLqAp4DHwP0OQg8Bt4DpzJh1EV8AT4EaDJQeAP8BI4lSujKuAp8DNEk4PAG+B4LoyqgGfArxBNDgJvgWOZGFUBz4HfIZscBN4BR9M1qgJeAH9CNDkIvAeOpGNUBbwE/oZochD4ABxOxagKeAX8C9HkIPAROJTMqAp4DfwL0eQg8Ak4mMioCngD/AvR5CDwGTiQyKgKeAv8D9HkIPAF2J/IqAp4B/wP0eQg8BXYl8ioCngP/A/R5CDwDdiTyKgK+AD8D9HkIPAd2J3IqAr4CPwP0eQg8APYlcioCvgE/A/R5CDwE9iZyKgK+Az8D9HkIPAL2JHIqAr4AvwP0eQg8BvYnshoGfAV+B+iyUHgD7AtkdEy4BvwL0STg8BfYGsiowp8B/6GaHIQ+AdsiWdUBfwA/oZochD4D2yOZ1QF/AT+hGhyEPgPbIpnVAX8Av6EaHIQyAGb4hlVAb+B3yGaHARywKZ4RlXAH+BXiCYHgRywMZ5RFfAX+BmiyUEgB2yIZ1QF/AN+hGhyEMgB6+MZVQH/gW8hmhwEcsC6eEZVQA74HqLJQSAHrI1nVAXkgK8hmhwEcsCaeEZVQA74EqLJQSAHrI5nVAXkgE8hmhwEcsCqeEZVQA74GKLJQSAHrIxnVAXkgA8hmhwEcsDyeEZVQA54H6LJQSAHLItnVAXkgLchmhwEcsDSeEZVQA54E6LJQSAHLIlnVAXkgNchmhwEcsDieEZVQA54FaLJQSAHLIpnVAXkgBchmhwEcsDCeEZVQA54HqLJQSAHLIhnVAXkgKchmhwEcsCCeEZVQA54EqLJQSAHzI9nVAXkgEchmhwEcsC8eEZVQA54GKLJQSAHzI1nVAXkgPshmhwEcsCceEZVQA64F6LJQSAHzI5nVAXkgDshmhwEcsCseEZVQA64HaLJQSAHzIxnVAXkgFshmhwEcsDMeEZVQA64GaLJQSAHzIhnVAXkgBshmhwEcsCMeEZVQA64HqLJQSAHTI9nVAXkgGshmhwEcsC0eEZVQA64GqLJQSAHTI1nVAXkgCshmhwEcsCUeEZVQA64HKLJQSAHTI5nVAXkgEshmhwEcsCkeEZVQA64GKLJQSAHTIpnVAXkgAshmpwP/gMh0QxJk2QYJAAAAABJRU5ErkJggg==');
+            padding: 20px;
+        }
+        
+            .forum-image {
+            max-width: 70%;
+            height: 400px;
+            width: 1500px;
+            border: 1px solid #e0c8d1;
+            margin: 15px 0;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
 
-        /* Container da saudação */
-        .greeting-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #2C5E2A;
-            background-color: #FFF9E6;
-            z-index: 1000;
+        /* For that old-school framed photo look */
+        .forum-image.framed {
+            border: 15px solid #f5e6ea;
+            border-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AkEEjIZJ/2M9QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABYklEQVQ4y+3UMUoDQRTG8Z8psJBUKTyAR7ATvIBgKTaCjVextBQbK0s7wUJsbPQAgqUXsLARxEJEIYgxGXkbbIRld4NJ8MCfYd6b7/3nzTCvVqv9d5X4Qz3gDm9YxwQe8Yx7rGXxVZzgKQh9lRlOsR3jO7jFZxT5LhNcYj/GD3GdE/kuVzjKcHc5kZ8yxl6Gm+REfssNtjPcW07kt4ywmeHGOZHfMsRahhvmRH7LAKsZbpAT+S0DrGS4fk7kt/SxnOH6OZHf0sNShuvlRH5LF0sZrpsT+S1dLGa4Tk7kt3SwkOE6OZHf0sZ8hmvnRH5LC3MZrpUT+S1NzGa4Zk7ktzQwk+EaOZHfUsd0hqvnRH5LHVMZrpYT+S01TGQ4lRP5LVVMZrhqTuS3VDCR4So5kd9SxniGq+REfksJYxmulBP5LUWMZrhCTuS3FDCS4Qo5kd+SYRjOcPmcyG/JMAxnuHxO5LdkGIYzXD4n8lsyDMMZLp8T+S0ZhuEMl8+J/JYMw3CGy+dEfkuGYTjD5XMivyXDMJzh8jmR35JhGM5w+ZzIb8kwDGe4fE7kt2QYhjNcPifyWzIMwxkunxP5LRmG4QyXz4n8lgzDcIbL50R+S4ZhOMP9A2GtVqv9Q38Ae9xkwYDRD0AAAAAASUVORK5CYII=') 30 round;
+            padding: 10px;
+            background: #fff9fb;
         }
 
-        /* Mensagens de saudação */
-        .greeting-message {
-            font-size: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            margin: 10px 0;
-            animation: fadeInUp 1s forwards;
-            text-align: center;
-            width: 100%;
-        }
-
-        /* Animações de entrada */
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Delays para as mensagens */
-        .greeting-message:nth-child(1) { animation-delay: 0.5s; }
-        .greeting-message:nth-child(2) { animation-delay: 1.5s; }
-        .greeting-message:nth-child(3) { animation-delay: 2.5s; }
-        .greeting-message:nth-child(4) { animation-delay: 3.5s; }
-        .greeting-message:nth-child(5) { animation-delay: 5.5s; }
-        .greeting-message:nth-child(6) { animation-delay: 6.5s; }
-
-        /* Conteúdo principal */
-        .content {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        .content.show { opacity: 1; }
-
-        /* Galeria automática */
-        .gallery-container {
-            width: 100%;
-            overflow: hidden;
-            padding: 20px 0;
+        /* Vintage Container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff9fb;
+            border: 1px solid #e0c8d1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
             position: relative;
         }
-
-        .gallery-track {
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e0c8d1;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #d23669;
+            text-shadow: 1px 1px 0px #fff, 2px 2px 0px #f8c3d4;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            color: #a86b85;
+            font-size: 1.1rem;
+        }
+        
+        /* Navigation */
+        nav {
             display: flex;
-            width: max-content;
-            animation: scroll 30s linear infinite;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
         }
-
-        .gallery-slide {
-            width: 350px;
-            height: 200px;
-            margin: 0 15px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
+        
+        .nav-button {
+            background-color: #f0d6e1;
+            border: 1px solid #d9b3c8;
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s ease;
+            color: #8a4b6e;
+            text-decoration: none;
+            border-radius: 3px;
         }
-
-        .gallery-slide:hover {
-            transform: scale(1.05);
+        
+        .nav-button:hover {
+            background-color: #e8c6d7;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        .gallery-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #e0c8d1;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease-out forwards;
         }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        
+        .content-section:nth-child(2) {
+            animation-delay: 0.2s;
         }
-
-        /* Pausa a animação no hover */
-        .gallery-track:hover {
-            animation-play-state: paused;
+        
+        .content-section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .content-section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        
+        .content-section:hover {
+            box-shadow: 0 5px 15px rgba(210, 54, 105, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #d23669;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #e0c8d1;
+            font-family: 'Georgia', serif;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        /* Forum Post Style */
+        .forum-post {
+            background-color: #fdf5f8;
+            border: 1px solid #e8d0da;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #e8d0da;
+        }
+        
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f0d6e1;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #d23669;
+            border: 2px solid #d9b3c8;
+        }
+        
+        .post-author {
+            font-weight: bold;
+            color: #d23669;
+        }
+        
+        .post-date {
+            font-size: 0.8rem;
+            color: #a86b85;
+            margin-left: auto;
+        }
+        
+        /* Heart Animation */
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatUp 4s ease-in forwards;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #e0c8d1;
+            color: #a86b85;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(20deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .post-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .post-date {
+                margin-left: 0;
+                margin-top: 5px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Mensagens iniciais -->
-    <div class="greeting-container" id="greeting">
-        <div class="greeting-message">Olá Bibina.</div>
-        <div class="greeting-message">Você pode estar se perguntando...</div>
-        <div class="greeting-message">O porque eu fiz isso</div>
-        <div class="greeting-message">Mas é até que um tanto simples</div>
-        <div class="greeting-message">Meu amor vem de todas as formas.</div>
-        <div class="greeting-message">Aproveite.</div>
-    </div>
-
-    <!-- Conteúdo principal -->
-    <div class="content" id="mainContent">
-        <section style="padding: 2rem;">
-            <h2 style="font-family: 'Montserrat', sans-serif;">Uma Cartinha pra Você</h2>
-            <p style="font-size: 1.1rem; line-height: 1.6;">
-               Querida bina, nada tira o prazer de sentar e escrever as mais lindas coisas para você e por no papel todo meu carinho pela doce pessoa que você é, então resolvi eternizar isso na interwebs :D
-            </p>
-        </section>
-
-        <section style="background-color: #acc2e5; padding: 2rem;">
-            <h2 style="font-family: 'Montserrat', sans-serif;">Cada momento que eu olho nos seus olhos é mágico.</h2>
-            <div class="gallery-container">
-                <div class="gallery-track">
-                    <!-- Fotos principais -->
-                    <div class="gallery-slide">
-                        <img src="foto1.jpeg" alt="Nossos momentos 1">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto2.jpg" alt="Nossos momentos 2">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto3.jpg" alt="Nossos momentos 3">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto4.jpg" alt="Nossos momentos 4">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto5.jpg" alt="Nossos momentos 5">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto6.jpg" alt="Nossos momentos 6">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto7.jpg" alt="Nossos momentos 7">
-                    </div>
-                    <!-- Fotos duplicadas para efeito infinito -->
-                    <div class="gallery-slide">
-                        <img src="foto1.jpeg" alt="Nossos momentos 1">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto2.jpg" alt="Nossos momentos 2">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto3.jpg" alt="Nossos momentos 3">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto4.jpg" alt="Nossos momentos 4">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto5.jpg" alt="Nossos momentos 5">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto6.jpg" alt="Nossos momentos 6">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="foto7.jpg" alt="Nossos momentos 7">
-                    </div>
+    <div class="container">
+        <header>
+            <h1>Cantinho do Amor</h1>
+            <p class="subtitle">O nosso lugarzinho para updates românticos.</p>
+        </header>
+        
+        <div class="content-section">
+            <h2>Historia principal do mês</h2>
+            <div class="forum-post">
+                <div class="post-header">
+                    <div class="avatar">💌</div>
+                    <span class="post-author">Tuninholove</span>
+                    <span class="post-date">Postado: 10 de julho, 20:27</span>
                 </div>
+                <p> Eu vi bibina depois de muito tempo, eu estava sentindo muita falta dela. Parece que a cada dia que passa eu fico mais mal acostumado, viver sozinho nao tem mais graca. Chove muito aqui em aracaju.</p>
+                <p> Eu estava esperando por ela a semanas, como se a cada dia sem ela me matasse lentamente, mesmo tao longe de mim, tao perto atraves dos meus pensamentos.</p>
             </div>
-        </section>
-
-        <section style="background-color: #d6afaf; padding: 2rem;">
-            <h2 style="font-family: 'Montserrat', sans-serif;">Obrigado por sempre ouvir as maluquices que eu te mando</h2>
-            <p style="font-size: 1rem;"> Você me inspira, dia após dia, como uma musa para um artista. Eu posso não ser bom pintando, ou escrevendo cartas, ou poemas... mas você me faz querer tentar. E isso é o suficiente. Eu quero você todos os dias.</p>
-        </section>
-
-
-        <section style="padding: 2rem; text-align: center;">
-            <h2 style="font-family: 'Montserrat', sans-serif;">Com Amor, Sempre</h2>
-            <p style="font-size: 1rem;">Feito com carinho por alguém que te adora.</p>
-        </section>
+        </div>
+        
+        <div class="content-section">
+            <h2>Fotinha do mês</h2>
+            <div class="forum-post">
+                <div class="post-header">
+                    <div class="avatar">✒️</div>
+                    <span class="post-author">Tuninholove</span>
+                    <span class="post-date">Postado: 10 de julho, 20:43</span>
+                </div>
+                <img src="bibina.jpeg" 
+         alt="bibinafoto1" 
+         class="forum-image">
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Perguntas e respostas dos BibiTunes!</h2>
+            <div class="forum-post">
+                <div class="post-header">
+                    <div class="avatar">💖</div>
+                    <span class="post-author">Tuninholove</span>
+                    <span class="post-date">Postado: 10 de julho, 21:32</span>
+                </div>
+                <p><strong>Q:</strong> Qual serie ou filme vcs estao vendo que estao gostando?</p>
+                <p><strong>A:</strong> Bom, eu ando vendo uma mistureba de coisas, mas acho que bibina ta viciada em gilmore girls, eu nao entendo muito bem dessas series assim, mas acho que se ela gosta deve ser bem legal!</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Newsletter do tuninho | Todos direitos reservados</p>
+        </footer>
     </div>
 
     <script>
-        // Transição das mensagens iniciais para o conteúdo
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const greeting = document.getElementById('greeting');
-                greeting.style.transition = 'opacity 1s ease';
-                greeting.style.opacity = '0';
+        document.addEventListener('DOMContentLoaded', function() {
+            // Heart animation on click
+            const heartTrigger = document.querySelector('.heart-trigger');
+            const container = document.querySelector('.container');
+            
+            heartTrigger.addEventListener('click', function(e) {
+                createHearts(e.clientX, e.clientY);
+            });
+            
+            function createHearts(x, y) {
+                const colors = ['#ff6b6b', '#ff8e8e', '#ffb3b3', '#ffd8d8', '#d23669'];
                 
-                setTimeout(() => {
-                    greeting.remove();
-                    document.getElementById('mainContent').classList.add('show');
-                }, 1000);
-            }, 10000);
+                for (let i = 0; i < 10; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '♥';
+                    heart.style.left = (x - 10) + 'px';
+                    heart.style.top = (y - 10) + 'px';
+                    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    
+                    document.body.appendChild(heart);
+                    
+                    // Remove heart after animation
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }
+            }
+            
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add hover effect to content sections
+            const contentSections = document.querySelectorAll('.content-section');
+            contentSections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 5px 15px rgba(210, 54, 105, 0.1)';
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // Random hearts floating up occasionally
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    const x = Math.random() * window.innerWidth;
+                    const y = window.innerHeight + 50;
+                    createHearts(x, y);
+                }
+            }, 3000);
         });
     </script>
 </body>
