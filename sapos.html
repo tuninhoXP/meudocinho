@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SapoLândia - O Paraíso dos Sapos</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive, sans-serif;
+            background-color: #e8f5e9;
+            color: #1b5e20;
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.1"><path fill="%232e7d32" d="M50,10 C60,20 70,30 80,40 C90,50 80,60 70,70 C60,80 40,90 30,80 C20,70 10,60 20,50 C30,40 40,30 50,10 Z"/></svg>');
+            background-size: 200px;
+        }
+        
+        /* CONTAINER PRINCIPAL */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #f1f8e9;
+            border: 5px solid #4caf50;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 100, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* CABEÇALHO */
+        header {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-bottom: 5px dashed #81c784;
+            position: relative;
+        }
+        
+        header::after {
+            content: "🐸🐸🐸";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            font-size: 24px;
+            background: #f1f8e9;
+            border-radius: 50%;
+            width: 100px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            text-shadow: 3px 3px 0 #1b5e20;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* NAVEGAÇÃO */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #81c784;
+            padding: 15px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #1b5e20;
+            box-shadow: 0 3px 0 #1b5e20;
+        }
+        
+        .nav-btn:hover {
+            background-color: #388e3c;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 0 #1b5e20;
+        }
+        
+        /* CONTEÚDO */
+        .content {
+            padding: 30px;
+        }
+        
+        .frog-card {
+            background-color: white;
+            border: 3px solid #4caf50;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 10px rgba(0, 100, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .frog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 100, 0, 0.2);
+        }
+        
+        .frog-card h2 {
+            color: #2e7d32;
+            border-bottom: 2px dashed #a5d6a7;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .frog-img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #81c784;
+            margin: 15px 0;
+        }
+        
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            background-color: #2e7d32;
+            color: white;
+            padding: 20px;
+            border-top: 5px dashed #81c784;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        /* DECORAÇÕES DE SAPO */
+        .frog-decoration {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- CABEÇALHO -->
+        <header>
+            <h1>SapoLândia</h1>
+            <p class="subtitle">O paraíso verde dos sapos! 🐸🌿</p>
+        </header>
+        
+        
+        <!-- CONTEÚDO -->
+        <div class="content">
+            <!-- CARD 1 -->
+            <div class="frog-card">
+                <h2>Sapo-Verde 🐸</h2>
+                <img src="sapoverde.png" alt="Sapo verde" class="frog-img">
+                <p>O sapo-verde é uma das espécies mais icônicas da SapoLândia! Com sua pele brilhante e olhos expressivos, ele é o rei dos pântanos e lagos. Eles adoram se esconder entre folhas e são excelentes nadadores.</p>
+            </div>
+            
+            <!-- CARD 2 -->
+            <div class="frog-card">
+                <h2>Sapo-Arborícola 🌳</h2>
+                <img src="sapoarbo.jpeg" alt="Sapo arborícola" class="frog-img">
+                <p>Estes pequeninos vivem nas árvores e têm dedos especiais que os ajudam a escalar. Suas cores vibrantes variam do verde-limão ao azul-turquesa. Eles são os acrobatas da floresta!</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="frog-card">
+                <h2>RAFA 🎸</h2>
+                <img src="sapoarbo.jpeg" alt="Sapo arborícola" class="frog-img">
+                <p> RAFA BOOOOOOOOY LE FRANCOUUUUIIISSSSS</p>
+            </div>
+            
+            <!-- CARD 4 -->
+            <div class="frog-card">
+                <h2>Sapo-Dourado ✨</h2>
+                <img src="sapodourado.jpeg" alt="Sapo dourado" class="frog-img">
+                <p>Raro e brilhante, o sapo-dourado é uma joia da natureza. Eles são considerados símbolos de sorte em muitas culturas e se camuflam perfeitamente entre folhas secas e raízes.</p>
+            </div>
+        </div>
+        
+        <!-- RODAPÉ -->
+        <footer>
+            <p>© 2023 SapoLândia - Todos os direitos reservados</p>
+            <p>🐸 Proteja os sapos e preserve a natureza! 🌍</p>
+        </footer>
+    </div>
+
+    <!-- SAPOS DECORATIVOS (JS) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona sapos decorativos
+            function addFrog() {
+                const frog = document.createElement('div');
+                frog.className = 'frog-decoration';
+                frog.innerHTML = '🐸';
+                frog.style.top = Math.random() * window.innerHeight + 'px';
+                frog.style.left = Math.random() * window.innerWidth + 'px';
+                frog.style.transform = `scale(${Math.random() * 2 + 1}) rotate(${Math.random() * 360}deg)`;
+                document.body.appendChild(frog);
+            }
+            
+            // Adiciona 10 sapinhos
+            for (let i = 0; i < 10; i++) {
+                addFrog();
+            }
+            
+            // Efeito de clique - faz sapos pularem
+            document.addEventListener('click', function(e) {
+                const frogs = document.querySelectorAll('.frog-decoration');
+                frogs.forEach(frog => {
+                    frog.style.transition = 'transform 0.5s';
+                    frog.style.transform = 'translateY(-50px)';
+                    setTimeout(() => {
+                        frog.style.transform = `translateY(0) scale(${Math.random() * 2 + 1})`;
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
